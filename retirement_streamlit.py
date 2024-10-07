@@ -249,44 +249,6 @@ def get_user_input():
     return current_savings, annual_savings, inflation_rate, current_age, retirement_age, assets, plan_type
 
 
-# Your existing RetirementPlan and other classes...
-
-def plot_retirement_savings(current_savings, inflation_rate, current_age, assets, plan_type):
-    """
-    Plot the effect of years to retirement and annual savings on total retirement savings using a line graph.
-    """
-    years_range = np.arange(1, 41)  # Range for years to retirement (1 to 40 years)
-    annuity_range = np.arange(1000, 20001, 5000)  # Range for annual savings (from $1,000 to $20,000)
-
-    savings_results = np.zeros((len(years_range), len(annuity_range)))  # To hold the results
-
-    # Calculate total retirement savings for varying years and annuity
-    for j, annual_savings in enumerate(annuity_range):
-        total_savings = []
-        for years in years_range:
-            retirement_plan = RetirementPlan(current_savings, annual_savings, inflation_rate, current_age,
-                                             current_age + years)
-            for asset in assets:
-                retirement_plan.add_assets(asset[0], asset[1], asset[2], asset[3])
-            future_value_current, future_value_annuity, total_retirement_savings = retirement_plan.calculate_total_retirement_savings()
-            total_savings.append(total_retirement_savings)
-        savings_results[:, j] = total_savings
-
-    # Plotting the line graph
-    plt.figure(figsize=(12, 8))
-
-    for j in range(len(annuity_range)):
-        plt.plot(years_range, savings_results[:, j], label=f'Annual Savings: ${annuity_range[j]:,.0f}')
-
-    plt.title('Effect of Years to Retirement and Annual Savings on Total Retirement Savings')
-    plt.xlabel('Years to Retirement')
-    plt.ylabel('Total Retirement Savings ($)')
-    plt.legend(title='Annual Savings', bbox_to_anchor=(1.05, 1), loc='upper left')
-    plt.grid()
-    plt.tight_layout()
-
-    # Show the plot in Streamlit
-    st.pyplot(plt)
 
 
 def main():
