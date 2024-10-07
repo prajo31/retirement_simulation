@@ -1,8 +1,7 @@
 matplotlib==3.4.1
 streamlit
 numpy
-setuptools
-appdirs
+
 
 
 
