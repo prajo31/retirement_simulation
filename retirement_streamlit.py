@@ -3,14 +3,7 @@ import streamlit as st
 import matplotlib
 from matplotlib import pyplot as plt
 import numpy as np
-from distutils.version import LooseVersion                               
-from functools import reduce                                             
-from io import StringIO                                                  
-from urllib.error import HTTPError
 
-
-import appdirs as ad
-ad.user_cache_dir = lambda *args: "/tmp"
 
 
 
