@@ -1,17 +1,7 @@
-import yfinance as yf
-import pandas as pd
-import pandas_datareader.data as web
+
 import streamlit as st
 from matplotlib import pyplot as plt
 import numpy as np
-from pandas import to_datetime
-import requests
-from pandas_datareader.compat import is_number
-from pandas.util._decorators import deprecate_kwarg         
-from pandas_datareader.av.forex import AVForexReader          
-from pandas_datareader.av.quotes import AVQuotesReader       
-from pandas_datareader.av.sector import AVSectorPerformanceReader       
-from pandas_datareader.av.time_series import AVTimeSeriesReader         
 from distutils.version import LooseVersion                               
 from functools import reduce                                             
 from io import StringIO                                                  
