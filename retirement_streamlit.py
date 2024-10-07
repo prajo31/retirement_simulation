@@ -256,18 +256,6 @@ def get_user_input():
     return current_savings, annual_savings, inflation_rate, current_age, retirement_age, assets, plan_type
 
 
-import numpy as np
-import streamlit as st
-from matplotlib import pyplot as plt
-
-
-# Your existing RetirementPlan and other classes...
-
-import numpy as np
-import streamlit as st
-from matplotlib import pyplot as plt
-
-
 # Your existing RetirementPlan and other classes...
 
 def plot_retirement_savings(current_savings, inflation_rate, current_age, assets, plan_type):
